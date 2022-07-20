@@ -1,17 +1,29 @@
+import React from 'react';
+import PrimaryDisplay from "./PrimaryDisplay";
+import SecondDisplay from './SecondDisplay';
+
 export default function App(){
     
-    
-    return(
-        <div className="display-initial">
-            <div className="img">
-                <img src="./image/logo.png"/>
+    function ChangeDysplai(){
+        if (change === false) {
+            return(
+                <SecondDisplay />
+            );
+        }
+
+        return(
+        <>
+            <PrimaryDisplay />
+            <div onClick={() => setChange(!change)} className="botton-initial">
+               Iniciar Recall!
             </div>
-        <div className="logo-name"> 
-            ZapRecall
-        </div>
-        <div onClick={()=>""} className="botton-initial">
-            Iniciar Recall!
-        </div>
-        </div>
+        </>
+        )
+    }
+    
+    const [change, setChange] = React.useState(true);
+
+    return(
+        <ChangeDysplai/>
     );
 }
