@@ -54,7 +54,8 @@ const allDecks =[
                 question: "O cachorro faz auau, em qual altitude o foguete da spacex atingi sua velocidade maxima?",
                 answer: "a uma altitude de 67,7 km"
             },
+            
             ]
         }
     ]
-export default allDecks;
+    export default allDecks;
