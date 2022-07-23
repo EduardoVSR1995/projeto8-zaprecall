@@ -1,24 +1,24 @@
 import React from 'react';
 import Questions from './Questions';
-import Incon from './Icon';
 import Mesage from './Mesage';
+import Reinitialize from './Reinitialize';
 
 
 
-export default function SecondDisplay({deck}) {
-    const [cont, setCont] = React.useState({plays:0,hits:0, mediuns:0, erros:0});
+export default function SecondDisplay({deck, setChange }) {
+    const [cont, setCont] = React.useState({plays:0,hits:0, mediuns:0, erros:0, img:[]});    
     function conte(value){
         if(value==="hits"){
-            setCont({...cont, hits: cont.hits+1, plays: cont.plays+1  });    
+            setCont({...cont, hits: cont.hits+1, plays: cont.plays+1,img:[cont.img , <img src='/image/vzinho.png'/>]}); 
         }
         if(value==="mediuns"){
-            setCont({...cont, mediuns: cont.mediuns+1, plays: cont.plays+1 }); 
+            setCont({...cont, mediuns: cont.mediuns+1, plays: cont.plays+1, img:[cont.img , <img src='/image/zinho.png'/>] }); 
         }
         if(value==="erros"){
-            setCont({...cont, erros: cont.erros+1, plays: cont.plays+1 }); 
+            setCont({...cont, erros: cont.erros+1, plays: cont.plays+1, img:[cont.img , <img src='/image/xzinho.png'/>] }); 
         }
     }
-    
+    console.log(cont)
     return(
         <div className="display-secondary">
             <div className="img">
@@ -34,11 +34,14 @@ export default function SecondDisplay({deck}) {
                 </div>
                 {cont.plays} / {deck.length} CONCLUÍDOS
                 <div className='icons'>
-                        <Incon hits={cont.hits} erros={cont.erros} mediuns={cont.mediuns}/>
+                {cont.img}
+                </div>  
+                <div className="botton">
+                    <Reinitialize plays={cont.plays} deck={deck} setChange={setChange}/>
                 </div>
             </div>
-
         </div>
-    );
+
+);
 
 }
