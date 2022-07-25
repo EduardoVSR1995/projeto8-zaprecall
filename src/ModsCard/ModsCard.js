@@ -1,4 +1,10 @@
 import React from 'react';
+import x from '../image/xzinho.png';
+import int from '../image/zinho.png';
+import v from '../image/vzinho.png';
+import Vector from '../image/Vector.png';
+import setinha from '../image/setinha.png';
+import '../ModsCard/Mods.css'
 
 export default function ModsCard({stateAnswer, number, questions, answers, setPlay, play ,conte}) {
     const [color, setColor] = React.useState("");
@@ -6,7 +12,7 @@ export default function ModsCard({stateAnswer, number, questions, answers, setPl
         return(
             <div onClick={()=> setPlay({...play, stateAnswer:'question'})} className='question'>
                 <div>Pergunta {number}</div> 
-                <img src='./image/Vector.png'/>
+                <img src={Vector}/>
             </div>
         )
     }
@@ -16,7 +22,7 @@ export default function ModsCard({stateAnswer, number, questions, answers, setPl
                 <div className="question-description">
                     {questions} 
                 </div>
-                <img onClick={()=> setPlay({...play, stateAnswer:'correctAnswer'})} className='little-arrow' src='./image/setinha.png'/>
+                <img onClick={()=> setPlay({...play, stateAnswer:'correctAnswer'})} className='little-arrow' src={setinha}/>
             </>
         );
     }
@@ -39,14 +45,14 @@ export default function ModsCard({stateAnswer, number, questions, answers, setPl
         if(color==="red"){
         return(
         <div className='question'>
-                <s className={color} >Pergunta {number}</s> <img src='./image/xzinho.png'/>
+                <s className={color} >Pergunta {number}</s> <img src={x}/>
         </div>
         );
         }
         else if(color==="green"){  
                     return(
         <div className='question'>
-                <s className={color} >Pergunta {number}</s> <img src='./image/vzinho.png'/>
+                <s className={color} >Pergunta {number}</s> <img src={v}/>
         </div> 
         )
 
@@ -54,7 +60,7 @@ export default function ModsCard({stateAnswer, number, questions, answers, setPl
     else if(color==="yellow"){
         return(
         <div className='question'>
-                <s className={color} >Pergunta {number}</s> <img src='./image/zinho.png'/>
+                <s className={color} >Pergunta {number}</s> <img src={int}/>
         </div> 
         )
         }

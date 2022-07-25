@@ -1,0 +1,13 @@
+*{
+  box-sizing: border-box;
+}
+
+body, .img, .logo-name {
+  background-color: #FB6B6B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+

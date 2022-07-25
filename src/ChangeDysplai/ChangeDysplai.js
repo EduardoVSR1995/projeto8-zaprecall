@@ -1,7 +1,7 @@
-
-import PrimaryDisplay from "./PrimaryDisplay";
-import SecondDisplay from './SecondDisplay';
-import decks from './decks';
+import PrimaryDisplay from "../PrimaryDisplay/PrimaryDisplay";
+import SecondDisplay from '../SecondDisplay/SecondDisplay';
+import decks from '../decks/decks';
+import '../css/style.css';
 
 export default function ChangeDysplai({change, setChange}){
     if (change === false) {

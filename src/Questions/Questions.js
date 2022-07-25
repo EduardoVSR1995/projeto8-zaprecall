@@ -1,5 +1,7 @@
-import EveryQuestion from './EveryQuestion';
+import EveryQuestion from '../EveryQuestion/EveryQuestion';
 import React from 'react';
+import '../Questions/Question.css'
+
 export default function Questions({deck, setCont, conte}) {
     return(
         <div className='every-questions'>

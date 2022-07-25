@@ -1,5 +1,6 @@
 import React from 'react';
-import ModsCard from "./ModsCard";
+import ModsCard from "../ModsCard/ModsCard";
+import '../EveryQuestion/EveryQuestion.css'
 
 export default function EveryQuestion({number ,questions, answers, setCont, conte}) {
     const [play, setPlay] = React.useState({stateAnswer:"numberQuestion"});
